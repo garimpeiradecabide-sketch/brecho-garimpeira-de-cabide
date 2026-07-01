@@ -76,7 +76,7 @@
 
         header {
             margin-top: 60px;
-            background: linear-gradient(rgba(55, 71, 43, 0.75), rgba(55, 71, 43, 0.8)), url('https://raw.githubusercontent.com/garimpeiradecabide-sketch/brecho-garimpeira-de-cabide/main/arquivo_00000006720720eba8536f706905ac8.png') center/cover no-repeat;
+            position: relative;
             height: 60vh;
             display: flex;
             flex-direction: column;
@@ -85,6 +85,32 @@
             text-align: center;
             color: var(--branco);
             padding: 20px;
+            overflow: hidden;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(55, 71, 43, 0.75), rgba(55, 71, 43, 0.8));
+            z-index: 2;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 3;
         }
 
         header h1 {
@@ -167,22 +193,20 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 8px 20px var(--sombra);
+            display: flex;
+            flex-direction: column;
         }
 
         .item-img {
             height: 420px;
             width: 100%;
+            object-fit: cover;
         }
-
-        /* Links oficiais corrigidos caractere por caractere */
-        .img-1 { background: url('https://raw.githubusercontent.com/garimpeiradecabide-sketch/brecho-garimpeira-de-cabide/main/176276164541.png') center/cover no-repeat; }
-        .img-2 { background: url('https://raw.githubusercontent.com/garimpeiradecabide-sketch/brecho-garimpeira-de-cabide/main/1762762310568.png') center/cover no-repeat; }
-        .img-3 { background: url('https://raw.githubusercontent.com/garimpeiradecabide-sketch/brecho-garimpeira-de-cabide/main/176276386651.png') center/cover no-repeat; }
-        .img-4 { background: url('https://raw.githubusercontent.com/garimpeiradecabide-sketch/brecho-garimpeira-de-cabide/main/17627623971587.png') center/cover no-repeat; }
 
         .card-info {
             padding: 18px;
             text-align: center;
+            background: var(--branco);
         }
 
         .card-info h4 {
@@ -361,8 +385,12 @@
     </nav>
 
     <header>
-        <h1>Moda com Propósito</h1>
-        <p>Curadoria exclusiva de peças femininas com foco em sustentabilidade e elegância.</p>
+        <img class="header-bg" src="https://raw.githubusercontent.com/garimpeiradecabide-sketch/brecho-garimpeira-de-cabide/main/file_00000006720720eba8536f706905ac8.png" alt="Fundo Garimpeira">
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <h1>Moda com Propósito</h1>
+            <p>Curadoria exclusiva de peças femininas com foco em sustentabilidade e elegância.</p>
+        </div>
     </header>
 
     <section id="vitrine">
@@ -379,7 +407,7 @@
 
         <div class="grid-galeria">
             <div class="card-look">
-                <div class="item-img img-1"></div>
+                <img class="item-img" src="https://raw.githubusercontent.com/garimpeiradecabide-sketch/brecho-garimpeira-de-cabide/main/176276164541.png" alt="Look 1">
                 <div class="card-info">
                     <h4>Deu Match!</h4>
                     <p>Conjuntos Modernos & Confortáveis</p>
@@ -387,7 +415,7 @@
             </div>
 
             <div class="card-look">
-                <div class="item-img img-2"></div>
+                <img class="item-img" src="https://raw.githubusercontent.com/garimpeiradecabide-sketch/brecho-garimpeira-de-cabide/main/1762762310568.png" alt="Look 2">
                 <div class="card-info">
                     <h4>Equilíbrio Visual</h4>
                     <p>Silhuetas Alongadas & Elegantes</p>
@@ -395,7 +423,7 @@
             </div>
 
             <div class="card-look">
-                <div class="item-img img-3"></div>
+                <img class="item-img" src="https://raw.githubusercontent.com/garimpeiradecabide-sketch/brecho-garimpeira-de-cabide/main/176276386651.png" alt="Look 3">
                 <div class="card-info">
                     <h4>Versatilidade</h4>
                     <p>Do Casual ao Evento Especial</p>
@@ -403,7 +431,7 @@
             </div>
 
             <div class="card-look">
-                <div class="item-img img-4"></div>
+                <img class="item-img" src="https://raw.githubusercontent.com/garimpeiradecabide-sketch/brecho-garimpeira-de-cabide/main/17627623971587.png" alt="Look 4">
                 <div class="card-info">
                     <h4>Moderna & Confiante</h4>
                     <p>Peças com Caimento Impecável</p>
@@ -452,5 +480,4 @@
     </a>
 
 </body>
-  </html>
-  
+</html>
